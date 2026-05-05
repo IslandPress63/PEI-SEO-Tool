@@ -1,0 +1,17 @@
+# PEI News SEO Headline Generator — Python dependencies
+# Install with:  pip install -r requirements.txt
+
+# Core UI framework
+streamlit>=1.35.0
+
+# Open-source keyword extraction (no API key needed)
+yake>=0.4.8
+
+# Unofficial Google Trends API (no API key needed)
+pytrends>=4.9.2
+
+# Anthropic Claude API (for LLM headline generation)
+anthropic>=0.25.0
+
+# Utility
+requests>=2.31.0
