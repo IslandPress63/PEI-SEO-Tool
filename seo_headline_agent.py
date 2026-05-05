@@ -299,11 +299,16 @@ with st.sidebar:
     st.header("⚙️ Configuration")
 
     api_key = st.text_input(
-        "Anthropic API Key",
-        type="password",
-        help="Get yours at console.anthropic.com. The key is never stored.",
-        placeholder="sk-ant-…",
-    )
+        if "ANTHROPIC_API_KEY" in st.secrets:
+        api_key = st.secrets["ANTHROPIC_API_KEY"]
+        st.success("✅ API key configured", icon="🔑")
+    else:
+        api_key = st.text_input(
+            "Anthropic API Key",
+            type="password",
+            help="Get yours at console.anthropic.com. The key is never stored.",
+            placeholder="sk-ant-…",
+        )
 
     paper = st.selectbox(
         "Select Paper",
